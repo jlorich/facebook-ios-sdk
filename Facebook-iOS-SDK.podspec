@@ -51,4 +51,12 @@ Pod::Spec.new do |s|
     spec.header_dir = "FBSDKShareKit"
     spec.dependency 'Facebook-iOS-SDK/CoreKit'
   end
+  s.subspec 'MessengerShareKit' do |spec|
+    spec.source_files   = "FBSDKMessengerShareKit/FBSDKMessengerShareKit/**/*.{h}"
+    spec.public_header_files = "FBSDKMessengerShareKit/FBSDKMessengerShareKit/Headers/**/*.{h}"
+    spec.header_dir = "FBSDKMessengerShareKit"
+    spec.dependency 'Facebook-iOS-SDK/CoreKit'
+    s.library = 'FBSDKMessengerShareKit'
+    s.xcconfig = { 'LIBRARY_SEARCH_PATHS' => "$(SRCROOT)/Pods/Facebook-iOS-SDK/FBSDKMessengerShareKit/FBSDKMessengerShareKit" }
+  end
 end
